@@ -527,6 +527,7 @@ M.search = function(opts)
     api.nvim_buf_add_highlight(state.bufnr, config.namespace,
         state.user_config.highlight.border, c_line - 1, 0, -1)
     state.total_item = {}
+    vim.pretty_print(config)
     state.finder_instance:search({
         cwd = state.cwd,
         search_text = state.query.search_query,

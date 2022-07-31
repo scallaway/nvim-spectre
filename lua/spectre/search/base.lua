@@ -87,10 +87,6 @@ base.search = function(self, query)
         -- query.search_text,
         self.state.args,
     }
-    if query.path then
-        local args_path = self:get_path_args(scan_paths(query.path))
-        table.insert(args, args_path)
-    end
 
     if self.state.options_value then
         table.insert(args, self.state.options_value)
@@ -105,9 +101,15 @@ base.search = function(self, query)
     end
     table.insert(args, query.search_text)
 
+    if query.path then
+        local args_path = self:get_path_args(scan_paths(query.path))
+        table.insert(args, args_path)
+    end
+
     -- https://github.com/nvim-telescope/telescope.nvim/issues/907
     -- ripgrep issue
     table.insert(args, '.')
+    vim.pretty_print(args)
 
     log.debug("search cwd " .. (query.cwd or ''))
     log.debug("search: " .. self.state.cmd .. ' ' .. table.concat(args, ' '))

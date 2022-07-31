@@ -141,6 +141,11 @@ require('spectre').setup({
       cmd = "<cmd>lua require('spectre').change_options('hidden')<CR>",
       desc = "toggle search hidden"
     },
+    ['toggle_globular_search'] = {
+        map = "tg",
+        cmd = "<cmd>lua require('spectre').change_optiosn('globular')<CR>",
+        desc = "toggle globular search"
+    },
     -- you can put your mapping here it only use normal mode
   },
   find_engine = {
@@ -166,6 +171,11 @@ require('spectre').setup({
           desc="hidden file",
           icon="[H]"
         },
+	['globular'] = {
+	  value="-g",
+	  desc="globular search",
+	  icon="[G]"
+	},
         -- you can put any rg search option you want here it can toggle with
         -- show_option function
       }

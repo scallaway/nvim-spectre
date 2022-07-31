@@ -87,6 +87,11 @@ local config = {
             cmd = "<cmd>lua require('spectre').change_options('hidden')<CR>",
             desc = "toggle search hidden"
         },
+--	['toggle_globular_search'] = {
+--	    map = "tg",
+--	    cmd = "<cmd>lua require('spectre').change_options('globular')<CR>",
+--	    desc = "toggle globular search"
+--	}
     },
     find_engine        = {
         ['rg'] = {
